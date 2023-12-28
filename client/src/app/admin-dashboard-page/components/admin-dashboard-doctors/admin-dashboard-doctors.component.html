@@ -1,0 +1,19 @@
+<div class="doctors-container">
+  <h2>Список инженеров</h2>
+  <ul class="doctors-list">
+    <li *ngFor="let engineer of engineer">
+      <div>
+      <div><p><strong>Имя:</strong> {{engineer.name}}</p>
+        <p><strong>Специальность:</strong> {{engineer.specialty}}</p>
+        <p><strong>Средняя оценка:</strong> {{engineer.avg_feedback}}</p></div>
+     <!--<img height="100px" width="100px" src="https://i.pinimg.com/originals/8a/a7/83/8aa7831e22f8d5c74aecfe0c0e6953e3.jpg">--> 
+      </div>
+      
+      <div class="btn-box">
+        <button (click)="openFeedback(engineer)">
+          Отчет
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

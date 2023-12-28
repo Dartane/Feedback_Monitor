@@ -1,0 +1,29 @@
+<div class="filter-container">
+    <label for="doctorSelect">Выберите инженера:</label>
+    <select id="doctorSelect" [(ngModel)]="selectedEngId">
+        <option [ngValue]="null">Все инженеры</option>
+        <option *ngFor="let engineer of engineers" [ngValue]="engineer.id_eng">{{ engineer.eng_name }}</option>
+      </select>
+  </div>
+
+<div class="schedules-container">
+    <h2>Список отзывов</h2>
+    <ul class="schedules-list">
+        <li *ngFor="let feedback of getFilteredSchedules()">
+            <div class="schedule-details">
+          <p class="date"><strong>Дата выполнения работы:</strong> {{ feedback.finish_date }}</p>
+          <div class="ratings">
+            <p class="rating"><strong>Общая: {{ feedback.full_mark }}</strong></p>
+            <p class="rating">Коммуникация: {{ feedback.communication_mark }}</p>
+            <p class="rating">Профессионализм: {{ feedback.prof_mark }}</p>
+            <p class="rating">Скорость: {{ feedback.speed_mark }}</p>
+          </div>
+          Текстовый отзыв
+          <p class="comment">{{ feedback.text_mark}}</p>
+            </div>
+            <hr>
+            <br>
+        <!-- Вы можете добавить еще кнопки или элементы управления здесь, если необходимо -->
+      </li>
+    </ul>
+  </div>

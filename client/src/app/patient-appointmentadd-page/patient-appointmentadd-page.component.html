@@ -1,0 +1,21 @@
+<div class="page">
+    <app-patient-dashboaed-sidebar></app-patient-dashboaed-sidebar>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <app-doctor-dropdown></app-doctor-dropdown>
+      </div>
+      <div class="description">
+        <label for="communication">Оценка за коммуникацию:</label>
+        <input type="number" id="communication" [(ngModel)]="communication_mark" name="communication" min="1" max="5" required>
+        <label for="professionalism">Оценка за профессионализм:</label>
+        <input type="number" id="professionalism" [(ngModel)]="prof_mark" name="professionalism" min="1" max="5" required>
+        <label for="speed">Оценка за скорость:</label>
+        <input type="number" id="speed" [(ngModel)]="speed_mark" name="speed" min="1" max="5" required>
+        <label for="overall">Общая оценка:</label>
+        <input type="number" id="overall" [(ngModel)]="full_mark" name="overall" min="1" max="5" required>
+        <label for="problem">Опишите ваши  впечатления:</label>
+        <textarea id="problem" [(ngModel)]="text_mark" name="problem"></textarea>
+      </div>
+      <button type="submit">Отправить отзыв</button>
+    </form>
+  </div>

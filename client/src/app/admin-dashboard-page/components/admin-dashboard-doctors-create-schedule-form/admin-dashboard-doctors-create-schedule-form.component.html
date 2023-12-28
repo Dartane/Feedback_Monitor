@@ -1,0 +1,48 @@
+<div *ngIf="infocard" class="card">
+  <a routerLink="/admin-dashboard" class="brand-logo">&#x2717;</a>
+    <h3 class="card-title">Отчет по оценкам <br>{{ infocard.eng_name }}</h3>
+   <div>
+   </div>
+    <div class="medcard-details">
+    
+    <fusioncharts
+    type="Column2d"
+    [dataSource]="dataSource"
+  >
+  </fusioncharts>
+  <br>
+      <p class="star"><strong>★</strong> {{ infocard.count_mark_1 }}</p>
+      <p class="star"><strong>★★</strong> {{ infocard.count_mark_2 }}</p>
+      <p class="star"><strong>★★★</strong> {{ infocard.count_mark_3 }}</p>
+      <p class="star">
+        <strong>★★★★</strong> {{ infocard.count_mark_4 }}
+      </p>
+      <p class="star"><strong>★★★★★</strong> {{ infocard.count_mark_5 }}</p> 
+    </div>
+  <!--
+    <form (ngSubmit)="onSubmit()">
+      <div class="input-field">
+        <label for="date">Дата</label>
+        <input type="date" id="date" [(ngModel)]="scheduleData.date" name="date" required>
+      </div>
+  
+      <div *ngFor="let interval of scheduleData.startTimes; let i = index" class="time-interval">
+        <div class="input-field">
+          <label for="startTime{{i}}">Время начала</label>
+          <input type="time" id="startTime{{i}}" [(ngModel)]="scheduleData.startTimes[i]" name="startTimes{{i}}" required>
+        </div>
+  
+        <div class="input-field">
+          <label for="endTime{{i}}">Время окончания</label>
+          <input type="time" id="endTime{{i}}" [(ngModel)]="scheduleData.endTimes[i]" name="endTimes{{i}}" required>
+        </div>
+      </div>
+  
+      <div class="card-action">
+        <button type="button" class="btn btn-secondary" (click)="addTimeInterval()">Добавить интервал времени</button>
+        <button type="submit" class="btn btn-primary">Создать расписание</button>
+      </div>
+    </form>
+
+    -->
+  </div>
